@@ -12,14 +12,22 @@ configMapGenerator:
     name: helloworld
 
 patches:
-  - target:
+  - path: deployment-patch.yaml
+    target:
       group: apps
       version: v1
       kind: Deployment
       name: helloworld
-    path: deployment-patch.yaml
-  - target:
+    
+  - path: service-patch.yaml
+    target:
       version: v1
       kind: Service
       name: helloworld
-    path: service-patch.yaml
+    
+  - path: ingress-patch.yaml
+    target:
+      group: networking.istio.io
+      version: v1alpha3
+      kind: VirtualService
+      name: helloworld

@@ -9,7 +9,7 @@ spec:
     spec:
       containers:
       - name: helloworld
-        image: docker.io/mehi/realworks-helloworld:1.1
+        image: ghcr.io/mehix/rw-k-task:main
         imagePullPolicy: "Always"
         envFrom:
         - configMapRef:

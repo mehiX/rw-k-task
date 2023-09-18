@@ -1,0 +1,3 @@
+- op: add
+  path: /spec/selector/env
+  value: prod

@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloworld
+spec:
+  replicas: 3
+  selector:  #managed by Kustomize
+  template:
+    spec:
+      containers:
+      - name: helloworld
+        image: docker.io/mehi/realworks-helloworld:1.1
+        imagePullPolicy: "Always"
+        envFrom:
+        - configMapRef:
+            name: helloworld
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80

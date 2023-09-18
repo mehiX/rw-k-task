@@ -1,0 +1,9 @@
+- op: add
+  path: /spec/template/metadata/labels/env
+  value: prod
+- op: add
+  path: /spec/selector/matchLabels/env
+  value: prod
+- op: replace
+  path: /spec/template/spec/containers/0/envFrom/0/configMapRef/name
+  value: prod-helloworld
